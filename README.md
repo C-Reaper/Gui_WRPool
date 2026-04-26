@@ -1,193 +1,74 @@
-# Gui_WRPool
+# Project README
 
+## Overview
+The project is a Water Ripple Pool simulation implemented in C. It uses custom libraries and windowing APIs to render and interact with the water ripple effect.
 
-## Project Overview
+## Features
+- Water Ripple Pool simulation
+- Mouse interaction to create ripples
+- Clear screen functionality
+- Basic window management (setup, update, delete)
 
-This project implements specialized functionality related to wrpool.
-
-## Core Components
-
-### Main Functionality
-- Implements core algorithms for wrpool
-- Efficient data structures
-- Optimized performance
-- Clean code organization
-
-### Technical Features
-- C/C++ implementation
-- Dynamic memory management
-- Platform-independent design
-- Real-time capable
-
-### Architecture
-- Module separation
-- Clear interface design
-- Proper abstraction layers
-- Extensible design
-
-## Use Cases
-- Production systems
-- Educational purposes
-- Research applications
-- Performance-critical operations
-
-## Performance Characteristics
-- Optimized algorithms
-- Efficient memory usage
-- Scalable architecture
-- Minimal overhead
-
-## Implementation Quality
-- Well-organized code
-- Meaningful naming
-- Proper error handling
-- Memory management
-
-## Build and Deployment
-- Standard C/C++ compilation
-- Makefile-based building
-- Cross-platform support
-- Easy integration
-
-
-## Building the Project
+## Project Structure
 
 ### Prerequisites
-- C/C++ Compiler (GCC, Clang, or MSVC)
+- C/C++ Compiler and Debugger (GCC, Clang)
 - Make utility
 - Standard development tools
+- Libraries needed:
+  - X11 for Linux windowing
+  - user32, gdi32, winmm for Windows windowing
+  - emcc for WebAssembly
 
-### Build Steps
+## Build & Run
+### Linux
+To build and run the project on Linux:
 
-1. Navigate to project directory:
-```bash
-cd Gui_WRPool
+```sh
+cd <Project>
+make -f Makefile.linux all
+make -f Makefile.linux exe
 ```
 
-2. Build the project:
-```bash
-make -f Makefile.(os) all
+### Windows
+To build and run the project on Windows:
+
+```sh
+cd <Project>
+make -f Makefile.windows all
+make -f Makefile.windows exe
 ```
 
-3. For clean rebuild:
-```bash
-make -f Makefile.(os) clean
-make -f Makefile.(os) all
+### Wine
+To cross-compile for Windows using Wine on Linux:
+
+```sh
+cd <Project>
+make -f Makefile.wine all
+make -f Makefile.wine exe
 ```
 
-4. If there are ./bin and ./libs directories, build libs with:
-```bash
-make -f Makefile.(os) cleanlib
-make -f Makefile.(os) lib
+### WebAssembly (Emscripten)
+To build and run the project as a WebAssembly module:
+
+```sh
+cd <Project>
+make -f Makefile.web all
+make -f Makefile.web exe
 ```
-
-### Build Options
-```bash
-make -f Makefile.(os) all         # build output
-make -f Makefile.(os) do        # build + exe output
-make -f Makefile.(os) clean   # Remove build artifacts
-```
-
-## Running the Project
-
-Execute the compiled binary:
-
-```bash
-./build/Main(.exe)
-```
-
-Or using make:
-```bash
-make -f Makefile.(os) exe
-```
-
-## Project Organization
-
-```
-Gui_WRPool/
-├── src/
-│   ├── Main.c          # Entry point
-│   └── *.c             # Implementation files
-├── Makefile            # Build configuration
-└── README.md           # This file
-```
-
-## Technical Details
-
-### Language: C/C++
-- Performance-oriented
-- Direct hardware access where needed
-- Memory efficient
-- Widely portable
-
-### Key Technologies
-- Standard C library
-- System-specific libraries as needed
-- Algorithm optimization
-- Efficient data structures
-
-### Code Quality
-- Clean, readable implementation
-- Proper error handling
-- Resource management
-- Well-documented algorithms
-
-## Development Notes
-
-### Architecture Decisions
-- Modular design for reusability
-- Efficient algorithms for performance
-- Clear separation of concerns
-- Extensible structure
-
-### Performance Optimizations
-- Algorithm efficiency
-- Memory layout optimization
-- Cache-conscious programming
-- Minimal overhead
-
-### Portability
-- Cross-platform compatible
-- Platform-specific optimizations where possible
-- Standard library usage
-- No external dependencies (where feasible)
-
-## Troubleshooting
-
-### Build Issues
-- Ensure compiler is installed
-- Check file paths and permissions
-- Verify Make installation
-- Review compiler error messages
-
-### Runtime Issues
-- Check input data validity
-- Verify file accessibility
-- Ensure sufficient memory
-- Review output format
-
-### Performance Issues
-- Check compiler optimization flags
-- Profile hot code paths
-- Review algorithm complexity
-- Consider input size
-
-## Future Improvements
-
-Potential enhancements:
-- Additional optimization opportunities
-- Extended functionality
-- Platform-specific optimizations
-- Performance profiling
-
-## References
-
-For technical background:
-- Algorithm textbooks
-- Computer science references
-- Language documentation
-- Online educational resources
 
 ---
 
-*Project implementing practical algorithms and data structures in C/C++*
+## Files
+
+- **src/**: Contains the source code.
+  - **Main.c**: The entry point of the program.
+  - **WRPool.h**: Header file for the WRPool library.
+- **Makefile.linux**: Build configuration for Linux.
+- **Makefile.windows**: Build configuration for Windows.
+- **Makefile.wine**: Build configuration for Wine cross-compilation.
+- **Makefile.web**: Build configuration for WebAssembly.
+- **README.md**: This file.
+
+## License
+The project is licensed under the MIT License.
